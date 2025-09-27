@@ -30,9 +30,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         lblTitulo = new javax.swing.JLabel();
         lblInstruções = new javax.swing.JLabel();
-        txtIdade = new javax.swing.JTextField();
+        txtData = new javax.swing.JTextField();
         lblResposta = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        txtResposta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +44,17 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         lblResposta.setText("Sua idade é:");
 
         jButton1.setText("Calcular");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        txtResposta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRespostaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,11 +68,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblResposta)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblResposta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtResposta, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblInstruções)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton1))))
                 .addContainerGap(140, Short.MAX_VALUE))
         );
@@ -72,16 +87,33 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblInstruções)
-                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addGap(30, 30, 30)
-                .addComponent(lblResposta)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResposta)
+                    .addComponent(txtResposta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    //Evento que calcula idade ao precionar o botão
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String data = txtData.getText(); //transfere a sting digitada para "data"
+        
+        int idade = 2025 - Integer.parseInt(data); //converte o valor da string para um numero
+        
+        txtResposta.setText("" + idade); //coloca a resposta final
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtRespostaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRespostaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRespostaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,6 +145,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblInstruções;
     private javax.swing.JLabel lblResposta;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txtIdade;
+    private javax.swing.JTextField txtData;
+    private javax.swing.JTextField txtResposta;
     // End of variables declaration//GEN-END:variables
 }
