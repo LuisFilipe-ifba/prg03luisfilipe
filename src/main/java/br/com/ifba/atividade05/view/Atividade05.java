@@ -28,21 +28,121 @@ public class Atividade05 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sldInicio = new javax.swing.JSlider();
+        lblInicio = new javax.swing.JLabel();
+        lblInicioValor = new javax.swing.JLabel();
+        sldFinal = new javax.swing.JSlider();
+        lblFinalValor = new javax.swing.JLabel();
+        lblFinal = new javax.swing.JLabel();
+        sldPulo = new javax.swing.JSlider();
+        lblPulo = new javax.swing.JLabel();
+        lblPuloValor = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        sldInicio.setMajorTickSpacing(10);
+        sldInicio.setMaximum(5);
+        sldInicio.setMinimum(1);
+        sldInicio.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldInicioStateChanged(evt);
+            }
+        });
+
+        lblInicio.setText("Inicio");
+
+        lblInicioValor.setText("5");
+
+        sldFinal.setMajorTickSpacing(5);
+        sldFinal.setMaximum(50);
+        sldFinal.setMinimum(5);
+        sldFinal.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldFinalStateChanged(evt);
+            }
+        });
+
+        lblFinalValor.setText("50");
+
+        lblFinal.setText("Final");
+
+        sldPulo.setMajorTickSpacing(10);
+        sldPulo.setMaximum(5);
+        sldPulo.setMinimum(1);
+        sldPulo.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldPuloStateChanged(evt);
+            }
+        });
+
+        lblPulo.setText("Pulo");
+
+        lblPuloValor.setText("5");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblFinal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sldFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblInicio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sldInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sldPulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblInicioValor)
+                    .addComponent(lblFinalValor)
+                    .addComponent(lblPuloValor))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sldInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblInicioValor)
+                    .addComponent(lblInicio))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sldFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFinalValor)
+                    .addComponent(lblFinal))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sldPulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPulo)
+                    .addComponent(lblPuloValor))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sldInicioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldInicioStateChanged
+        // TODO add your handling code here:
+        lblInicioValor.setText("" + sldInicio.getValue());
+    }//GEN-LAST:event_sldInicioStateChanged
+
+    private void sldFinalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldFinalStateChanged
+        // TODO add your handling code here:
+        lblFinalValor.setText("" + sldFinal.getValue());
+    }//GEN-LAST:event_sldFinalStateChanged
+
+    private void sldPuloStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldPuloStateChanged
+        // TODO add your handling code here:
+        lblPuloValor.setText("" + sldPulo.getValue());
+    }//GEN-LAST:event_sldPuloStateChanged
 
     /**
      * @param args the command line arguments
@@ -70,5 +170,14 @@ public class Atividade05 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblFinal;
+    private javax.swing.JLabel lblFinalValor;
+    private javax.swing.JLabel lblInicio;
+    private javax.swing.JLabel lblInicioValor;
+    private javax.swing.JLabel lblPulo;
+    private javax.swing.JLabel lblPuloValor;
+    private javax.swing.JSlider sldFinal;
+    private javax.swing.JSlider sldInicio;
+    private javax.swing.JSlider sldPulo;
     // End of variables declaration//GEN-END:variables
 }
