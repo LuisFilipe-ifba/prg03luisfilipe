@@ -24,18 +24,23 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="lblTituloCalculo" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                   <Component id="lblResposta" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblResultado" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtValor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="txtValor" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="btnCalculo" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="lblExplicacao" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="188" max="32767" attributes="0"/>
+              <EmptySpace pref="175" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -48,9 +53,17 @@
                   <Component id="txtValor" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCalculo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="lblResposta" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="203" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTituloCalculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblExplicacao" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblResposta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblResultado" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="188" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,10 +86,28 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalculoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblResultado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblResposta">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Resposta:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTituloCalculo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Calculo:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblExplicacao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="resposta"/>
       </Properties>
     </Component>
   </SubComponents>

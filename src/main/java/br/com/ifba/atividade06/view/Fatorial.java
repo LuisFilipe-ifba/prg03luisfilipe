@@ -10,15 +10,20 @@ package br.com.ifba.atividade06.view;
  */
 public class Fatorial {
     
-    public void setValor (int n){
+    public static int setValor (int n){
+        int numero = n;
+        int fator = 1; // essa cariavel vai ser usada para fatorar o numero
+        
+        if(numero > 1){
+            fator = setValor(n - 1);
+            numero = numero * fator;
+            return numero;
+        }else{
+            return 1;
+        }
+        
         
     }
     
-    public int getFatorial(){
-        
-    }
     
-    public String getFormula(){
-        
-    }
 }

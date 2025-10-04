@@ -31,7 +31,10 @@ public class CalculosFatoriais extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         txtValor = new javax.swing.JTextField();
         btnCalculo = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
         lblResposta = new javax.swing.JLabel();
+        lblTituloCalculo = new javax.swing.JLabel();
+        lblExplicacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,24 +48,39 @@ public class CalculosFatoriais extends javax.swing.JFrame {
         });
 
         btnCalculo.setText("Calcular");
+        btnCalculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalculoActionPerformed(evt);
+            }
+        });
 
-        lblResposta.setText("jLabel1");
+        lblResultado.setText("1");
+
+        lblResposta.setText("Resposta:");
+
+        lblTituloCalculo.setText("Calculo:");
+
+        lblExplicacao.setText("resposta");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTituloCalculo)
+                    .addComponent(lblTitulo)
+                    .addComponent(lblResposta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblResposta)
+                    .addComponent(lblResultado)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTitulo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnCalculo)))
-                .addContainerGap(188, Short.MAX_VALUE))
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnCalculo))
+                    .addComponent(lblExplicacao))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,9 +90,15 @@ public class CalculosFatoriais extends javax.swing.JFrame {
                     .addComponent(lblTitulo)
                     .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCalculo))
-                .addGap(37, 37, 37)
-                .addComponent(lblResposta)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTituloCalculo)
+                    .addComponent(lblExplicacao))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResposta)
+                    .addComponent(lblResultado))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,6 +107,17 @@ public class CalculosFatoriais extends javax.swing.JFrame {
     private void txtValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValorActionPerformed
+
+    private void btnCalculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalculoActionPerformed
+        // TODO add your handling code here:
+        String dados = txtValor.getText();// string que pega o valor do texto excrito
+        int valor = Integer.parseInt(dados);
+        int resultado; // variavel que obtem o resultado final
+        
+        resultado = Fatorial.setValor(valor);// chamada do metodo da classe criada
+        
+        lblResultado.setText(String.valueOf(resultado));
+    }//GEN-LAST:event_btnCalculoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,8 +146,11 @@ public class CalculosFatoriais extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalculo;
+    private javax.swing.JLabel lblExplicacao;
     private javax.swing.JLabel lblResposta;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloCalculo;
     private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }
