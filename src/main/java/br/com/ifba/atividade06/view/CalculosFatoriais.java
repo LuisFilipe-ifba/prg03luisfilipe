@@ -116,6 +116,7 @@ public class CalculosFatoriais extends javax.swing.JFrame {
         
         resultado = Fatorial.setValor(valor);// chamada do metodo da classe criada
         
+        lblExplicacao.setText(Fatorial.setFormula(valor) + "=" + resultado);
         lblResultado.setText(String.valueOf(resultado));
     }//GEN-LAST:event_btnCalculoActionPerformed
 

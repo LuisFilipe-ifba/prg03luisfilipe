@@ -10,7 +10,7 @@ package br.com.ifba.atividade06.view;
  */
 public class Fatorial {
     
-    public static int setValor (int n){
+    public static int setValor (int n){//função responsavel por fatorar o numero
         int numero = n;
         int fator = 1; // essa cariavel vai ser usada para fatorar o numero
         
@@ -19,11 +19,18 @@ public class Fatorial {
             numero = numero * fator;
             return numero;
         }else{
-            return 1;
-        }
-        
-        
+            return 1; // o fatorial de numeros menores que 1 é 1
+        }        
     }
     
+    public static String setFormula(int n){// Função que retorna uma string explicando a formula do calculo
+        String formula = String.valueOf(1);
+        
+        if(n > 1){
+            formula = String.valueOf(n) + "*" + setFormula(n-1);// essa linha vai acumulando texto ate retornar o texto
+            return formula;
+        }
+        return formula;
+    }
     
 }
