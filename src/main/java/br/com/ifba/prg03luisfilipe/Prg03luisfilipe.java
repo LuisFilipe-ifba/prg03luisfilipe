@@ -24,9 +24,15 @@ public class Prg03luisfilipe {
         
         System.out.print("Digite seu nome: ");
         String nome = scanner.nextLine();
+        System.out.print("Digite o tipo(cc ou cp): ");
         String tipo = scanner.nextLine();
         conta.abrirConta(nome, tipo);
-         
+        
+        System.out.print("Digite o valor do deposito: ");
+        int valor = scanner.nextInt();
+        conta.depositar(valor);
+        
+        scanner.close();
         
     }
 }
