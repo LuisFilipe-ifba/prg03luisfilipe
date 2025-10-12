@@ -15,7 +15,7 @@ public class ContaBanco {
     private int saldo;
     private boolean status;
     
-    public ContaBanco(){// Metodo contrutor
+    public ContaBanco(){// Metodo construtor
         this.saldo = 0;
         this.status = false;
     }
