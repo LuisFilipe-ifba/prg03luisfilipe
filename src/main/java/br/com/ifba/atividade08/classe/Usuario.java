@@ -14,7 +14,7 @@ public class Usuario {
     private String email;
     private String senha;
     private boolean ativo;
-//    private PerfilUsuario perfil;
+    private PerfilUsuario perfil;
 //    private Log perfil;
     
     /**
@@ -29,6 +29,8 @@ public class Usuario {
         this.userName = user;
         this.email = email;
         this.senha = senha;
+        this.perfil = new PerfilUsuario(this.id);
+
     }
     
     public void sairConta(){
@@ -45,6 +47,14 @@ public class Usuario {
             setAtivo(true);
             return("logado com sucesso");
         }
+    }
+    
+    public void adicionarDescricao(String texto){
+        perfil.setDescricao(texto);//chama a função setter de Perfil usuario para adicionar uma descrição
+    }
+    
+    public String verDescricao(){
+        return perfil.getDescricao();//chama a função setter de Perfil usuario para ver a descrição
     }
     
     private long getId(){
