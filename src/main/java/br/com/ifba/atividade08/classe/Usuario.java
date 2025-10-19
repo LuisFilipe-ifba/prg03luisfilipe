@@ -15,7 +15,7 @@ public class Usuario {
     private String senha;
     private boolean ativo;
     private PerfilUsuario perfil;
-//    private Log perfil;
+    private Log logs;
     
     /**
      *
@@ -30,31 +30,41 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
         this.perfil = new PerfilUsuario(this.id);
+        this.logs = new Log(this.id, this.userName);
 
     }
     
     public void sairConta(){
         setAtivo(false);//sai da conta deixando ela desativada
+        logs.atualizarAcao("--saiu da conta--\n");
     }
     
     public String entraConta(String email, String senha){
             //função para logar na conta verifica se email e senha são iguais e ativa a conta se possitivo
         if(getEmail() != email){
+            logs.atualizarAcao("--tentativa de acesso da conta--\n");
            return("erro ao entrar na conta");
         }else if(getSenha() != senha){
+            logs.atualizarAcao("--tentativa de acesso da conta--\n");
            return("erro ao entrar na conta");
         }else{
             setAtivo(true);
+            logs.atualizarAcao("--acesso a conta--\n");
             return("logado com sucesso");
         }
     }
     
     public void adicionarDescricao(String texto){
+        logs.atualizarAcao("--mudado a descrição de" + perfil.getDescricao() + "\npara: " + texto + "--\n");
         perfil.setDescricao(texto);//chama a função setter de Perfil usuario para adicionar uma descrição
     }
     
     public String verDescricao(){
         return perfil.getDescricao();//chama a função setter de Perfil usuario para ver a descrição
+    }
+    
+    public String verLogs(){
+        return this.logs.getAcao();
     }
     
     private long getId(){
@@ -65,7 +75,7 @@ public class Usuario {
         this.id = id;
     }
     
-    private String getUser(){
+    public String getUser(){
         return this.userName;
     }
     
@@ -89,7 +99,7 @@ public class Usuario {
         this.senha = senha;
     }
     
-    private boolean getAtivo(){
+    public boolean getAtivo(){
         return this.ativo;
     }
     
