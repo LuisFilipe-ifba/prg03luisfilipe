@@ -161,18 +161,26 @@ public class CalcularPagamento extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+            //inicializa as formas de pagamento
         PagamentoCartao cartao = new PagamentoCartao();
         PagamentoDinheiro dinheiro = new PagamentoDinheiro();
         PagamentoPix pix = new PagamentoPix();
         
+            //verifica qual opção de pagamento foi selecionada
         if(btnDinheiro.isSelected()){
+            //Calcula o total a ser pago e exibe no label
             lblTotalPago.setText("Total pago:" + dinheiro.calcularTotal(Double.parseDouble(txtValor.getText())));
+            //Cria o recibo e poem no textArea
             txtAreaRecibo.setText(dinheiro.imprimirRecibo(Double.parseDouble(txtValor.getText())));
         }else if(btnCartao.isSelected()){
+            //Calcula o total a ser pago e exibe no label
             lblTotalPago.setText("Total pago:" + cartao.calcularTotal(Double.parseDouble(txtValor.getText())));
+            //Cria o recibo e poem no textArea
             txtAreaRecibo.setText(cartao.imprimirRecibo(Double.parseDouble(txtValor.getText())));
         }else if(btnPix.isSelected()){
+            //Calcula o total a ser pago e exibe no label
             lblTotalPago.setText("Total pago:" + pix.calcularTotal(Double.parseDouble(txtValor.getText())));
+            //Cria o recibo e poem no textArea
             txtAreaRecibo.setText(pix.imprimirRecibo(Double.parseDouble(txtValor.getText())));
         }else{
             lblTotalPago.setText("Total pago: ERRO");

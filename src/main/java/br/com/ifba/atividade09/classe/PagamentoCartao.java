@@ -15,7 +15,7 @@ public class PagamentoCartao implements Pagamento{
     
     @Override
     public double calcularTotal(double valor) {
-        setValor(valor + valor * 0.05);
+        setValor(valor * 1.05);//valor inicial com os acrecimos das taxas
         
         return getValor();
     }

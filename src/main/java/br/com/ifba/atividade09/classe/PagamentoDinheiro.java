@@ -20,7 +20,7 @@ public class PagamentoDinheiro implements Pagamento {
 
     @Override
     public double calcularTotal(double valor) {
-        setValor(valor * 0.9);
+        setValor(valor * 0.9); //valor inicial menos os dez porcento de desconto
         
         return getValor();
     }

@@ -15,7 +15,7 @@ public class PagamentoPix implements Pagamento{
     
     @Override
     public double calcularTotal(double valor) {
-        setValor(valor * 0.98);
+        setValor(valor * 0.98);//valor inicial subtraido dos dois porcento de cashback
                 
         return getValor();
     }
