@@ -36,4 +36,8 @@ public class Forma {
     public void setProfundidade(double profundidade) {
         this.profundidade = profundidade;
     }
+
+    public double obterArea(double i, double j, double k) {
+        return 1;
+    }
 }

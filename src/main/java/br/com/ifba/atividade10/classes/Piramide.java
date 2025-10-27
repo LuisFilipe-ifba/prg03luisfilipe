@@ -13,7 +13,7 @@ public class Piramide extends Forma3D{
     @Override
     public double obterArea(double altura, double largura, double profundidade){
         
-        return altura * largura * profundidade / 2;
+        return (largura*profundidade) + (altura*largura) + (altura*profundidade);
     }
     @Override
     public double obterVolume(double altura, double largura, double profundidade){
